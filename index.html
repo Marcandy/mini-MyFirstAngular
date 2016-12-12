@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html ng-app='ang1' lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+</head>
+<body ng-controller='mainCtrl'>
+
+<h1>{{test}}</h1>
+<input ng-model='test'/>
+
+<ul>
+  <input placeholder='by name' ng-model='searchBy'>
+  <li ng-repeat="g in guests | filter:searchBy track by $index ">
+    <p>
+      {{g.name}}
+    </p>
+    Color: {{g.favcolor}}
+  </li>
+</ul>
+
+
+<br>
+<input type="text" placeholder="name" ng-model='newGuest'>
+<input type="text" placeholder="color" ng-model='color'>
+<button type="button" name="button" ng-click='addGuest()'>Add Guest</button>
+
+
+
+
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.0/angular.js" charset="utf-8"></script>
+<script src="app.js" charset="utf-8"></script>
+<script src= "mainCtrl.js" charset="utf-8"></script>
+</body>
+</html>
